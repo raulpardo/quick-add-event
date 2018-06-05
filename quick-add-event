@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Check input parameters
+if [ $# != 2 ]; then
+  echo "The command requires exactly 2 parameters"
+  echo "Usage: quick-add-event <calendar name> '<text>'"
+  exit 1
+fi
+
+# Call gcalcli
+gcalcli --calendar $1 quick "$2 CET"
